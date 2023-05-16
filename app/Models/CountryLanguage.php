@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Thiagoprz\CompositeKey\HasCompositeKey;
 
 /**
  * App\Models\CountryLanguage
@@ -26,9 +27,11 @@ use Illuminate\Database\Eloquent\Model;
  */
 class CountryLanguage extends Model
 {
-    use HasFactory;
+    use HasFactory, HasCompositeKey;
 
-    protected $primaryKey = 'CountryCode_Language';
+    protected $primaryKey = ['country_code', 'language'];
 
-    public $incrementing = false;
+    protected $keyType = 'string';
+
+//    public $incrementing = false;
 }

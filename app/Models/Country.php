@@ -48,5 +48,10 @@ class Country extends Model
 {
     use HasFactory;
 
-    protected $primaryKey = 'Code';
+    protected $primaryKey = 'code';
+
+    public $incrementing = false;
+
+    protected $keyType = 'string';
+
 }

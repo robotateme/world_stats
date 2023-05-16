@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddVirtualColumnToCountryLanguagesTable extends Migration
+class DropPrimaryKeyInCountryLanguagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,10 +14,8 @@ class AddVirtualColumnToCountryLanguagesTable extends Migration
     public function up()
     {
         Schema::table('country_languages', function (Blueprint $table) {
-            $table->string('CountryCode_Language')
-                ->virtualAs('concat(CountryCode, Language)')
-                ->index()
-            ;
+            $table->dropPrimary();
+            $table->unique(['country_code', 'language'], 'fake_pk');
         });
     }
 
@@ -29,7 +27,8 @@ class AddVirtualColumnToCountryLanguagesTable extends Migration
     public function down()
     {
         Schema::table('country_languages', function (Blueprint $table) {
-            $table->dropColumn('CountryCode_Language');
+            $table->dropIndex('fake_pk');
+            $table->primary(['country_code', 'language']);
         });
     }
 }
