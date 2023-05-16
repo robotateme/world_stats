@@ -12,9 +12,23 @@ use Illuminate\Database\Eloquent\Model;
  * @method static Builder|CountryLanguage newModelQuery()
  * @method static Builder|CountryLanguage newQuery()
  * @method static Builder|CountryLanguage query()
+ * @property string $CountryCode
+ * @property string $Language
+ * @property string $IsOfficial
+ * @property string $Percentage
+ * @property string|null $CountryCode_Language
+ * @method static Builder|CountryLanguage whereCountryCode($value)
+ * @method static Builder|CountryLanguage whereCountryCodeLanguage($value)
+ * @method static Builder|CountryLanguage whereIsOfficial($value)
+ * @method static Builder|CountryLanguage whereLanguage($value)
+ * @method static Builder|CountryLanguage wherePercentage($value)
  * @mixin \Eloquent
  */
 class CountryLanguage extends Model
 {
     use HasFactory;
+
+    protected $primaryKey = 'CountryCode_Language';
+
+    public $incrementing = false;
 }
