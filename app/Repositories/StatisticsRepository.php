@@ -3,9 +3,7 @@
 namespace App\Repositories;
 
 use App\DTOs\StatisticsFiltersDto;
-use App\Models\Country;
 use App\Repositories\Contracts\BaseRepository;
-use App\Services\Contracts\ServiceInterface;
 use DB;
 use Illuminate\Database\Query\Expression;
 use Staudenmeir\LaravelCte\Query\Builder;
