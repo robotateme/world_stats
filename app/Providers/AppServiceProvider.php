@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+use App\Models\Country;
+use App\Repositories\StatisticsRepository;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -11,9 +14,12 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function register()
+    public function register(): void
     {
-        //
+        $this->app->when(StatisticsRepository::class)
+            ->needs(Model::class)
+            ->give(Country::class)
+        ;
     }
 
     /**
@@ -21,7 +27,7 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(): void
     {
         //
     }

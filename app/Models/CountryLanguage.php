@@ -7,19 +7,18 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Thiagoprz\CompositeKey\HasCompositeKey;
 
+
 /**
  * App\Models\CountryLanguage
  *
  * @method static Builder|CountryLanguage newModelQuery()
  * @method static Builder|CountryLanguage newQuery()
  * @method static Builder|CountryLanguage query()
- * @property string $CountryCode
- * @property string $Language
- * @property string $IsOfficial
- * @property string $Percentage
- * @property string|null $CountryCode_Language
+ * @property string $country_code
+ * @property string $language
+ * @property string $is_official
+ * @property string $percentage
  * @method static Builder|CountryLanguage whereCountryCode($value)
- * @method static Builder|CountryLanguage whereCountryCodeLanguage($value)
  * @method static Builder|CountryLanguage whereIsOfficial($value)
  * @method static Builder|CountryLanguage whereLanguage($value)
  * @method static Builder|CountryLanguage wherePercentage($value)

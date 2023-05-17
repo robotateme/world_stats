@@ -6,36 +6,37 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+
 /**
  * App\Models\Country
  *
  * @method static Builder|Country newModelQuery()
  * @method static Builder|Country newQuery()
  * @method static Builder|Country query()
- * @property int $Code
- * @property string $Name
- * @property string $Continent
- * @property string $Region
- * @property string $SurfaceArea
- * @property int|null $IndepYear
- * @property int $Population
- * @property string|null $LifeExpectancy
- * @property string|null $GNP
- * @property string|null $GNPOld
- * @property string $LocalName
- * @property string $GovernmentForm
- * @property string|null $HeadOfState
- * @property int|null $Capital
- * @property string $Code2
+ * @property string $code
+ * @property string $name
+ * @property string $continent
+ * @property string $region
+ * @property string $surface_area
+ * @property int|null $independence_year
+ * @property int $population
+ * @property string|null $life_expectancy
+ * @property string|null $gnp
+ * @property string|null $gnp_old
+ * @property string $local_name
+ * @property string $government_form
+ * @property string|null $head_of_state
+ * @property int|null $capital
+ * @property string $code2
  * @method static Builder|Country whereCapital($value)
  * @method static Builder|Country whereCode($value)
  * @method static Builder|Country whereCode2($value)
  * @method static Builder|Country whereContinent($value)
- * @method static Builder|Country whereGNP($value)
- * @method static Builder|Country whereGNPOld($value)
+ * @method static Builder|Country whereGnp($value)
+ * @method static Builder|Country whereGnpOld($value)
  * @method static Builder|Country whereGovernmentForm($value)
  * @method static Builder|Country whereHeadOfState($value)
- * @method static Builder|Country whereIndepYear($value)
+ * @method static Builder|Country whereIndependenceYear($value)
  * @method static Builder|Country whereLifeExpectancy($value)
  * @method static Builder|Country whereLocalName($value)
  * @method static Builder|Country whereName($value)
