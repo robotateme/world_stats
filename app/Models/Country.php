@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Staudenmeir\LaravelCte\Eloquent\QueriesExpressions;
 
 
 /**
@@ -47,7 +48,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Country extends Model
 {
-    use HasFactory;
+    use HasFactory, QueriesExpressions;
 
     protected $primaryKey = 'code';
 
