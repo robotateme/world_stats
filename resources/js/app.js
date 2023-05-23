@@ -6,9 +6,12 @@
 
 require('./bootstrap');
 import App from './components/App'
-import {BootstrapVue, TablePlugin} from 'bootstrap-vue'
+import {BootstrapVue, TablePlugin, IconsPlugin} from 'bootstrap-vue'
 
 window.Vue = require('vue').default;
+
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 /**
  * The following block of code may be used to automatically register your
@@ -22,7 +25,9 @@ window.Vue = require('vue').default;
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('stats-component', require('./components/StatsComponent.vue').default);
+Vue.use(BootstrapVue)
 Vue.use(TablePlugin)
+Vue.use(IconsPlugin)
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -33,7 +38,6 @@ Vue.use(TablePlugin)
 const app = new Vue({
     components: {
         App,
-        BootstrapVue,
     },
     template: '<App/>',
     el: '#app',

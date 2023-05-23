@@ -10,7 +10,7 @@ use Staudenmeir\LaravelCte\Query\Builder;
 
 class StatisticsRepository extends BaseRepository
 {
-    public function getMainWorldStatistics(StatisticsFiltersDto $filters) : array
+    public function getMainWorldStatistics(StatisticsFiltersDto $filters) : Builder
     {
         $query = new Builder($this->model->getConnection());
 
@@ -43,11 +43,10 @@ class StatisticsRepository extends BaseRepository
             ->from('cte')
             ->withExpression('cte', $cte)
             ->groupBy(['continent', 'region'])
-//            ->where(['continent' => 'Europe'])
             ->orderBy('population', 'desc')
         ;
-        dump($query->get()->toArray());
-        return [];
+
+        return $query;
     }
 
 }

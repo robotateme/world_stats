@@ -21,6 +21,8 @@ class StatisticsController extends Controller
     public function index(StatsRequest $request): array
     {
         $filters = StatisticsFiltersDto::fromArray($request->validated());
-        return $this->statisticsService->getWorldStatistics($filters)->toArray();
+        return [
+            'stats' => $this->statisticsService->getWorldStatistics($filters)
+        ];
     }
 }

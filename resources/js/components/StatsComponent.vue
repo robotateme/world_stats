@@ -13,17 +13,61 @@
     export default {
         data() {
           return {
-            fields: ['first_name', 'last_name', 'age'],
-            items: [
-              { age: 40, first_name: 'Dickerson', last_name: 'Macdonald' },
-              { age: 21, first_name: 'Larsen', last_name: 'Shaw' },
-              { age: 89, first_name: 'Geneva', last_name: 'Wilson' },
-              { age: 38, first_name: 'Jami', last_name: 'Carney' }
-            ]
+            fields: [
+              {
+                 key: 'continent',
+                 label: 'Continent',
+                 sortable: true,
+              },
+              {
+                key: 'region',
+                label: 'Region',
+                sortable: true,
+
+              },
+              {
+                key: 'life_duration',
+                label: 'lifeDuration',
+                sortable: true,
+
+              },
+              {
+                key: 'countries',
+                label: 'Countries',
+                sortable: true,
+
+              },
+              {
+                key: 'cities',
+                label: 'Cities',
+                sortable: true,
+              },
+              {
+                key: 'population',
+                label: 'Population',
+                sortable: true,
+              },
+              {
+                key: 'languages',
+                label: 'Languages',
+                sortable: true,
+              }
+
+              ],
+            items: []
           }
         },
         mounted() {
-            axios.get();
+          axios.get('http://localhost/api/statistics/main')
+              .then((response) => {
+                  this.items = response.data?.stats;
+              })
+              .catch((err) => {
+
+              })
+              .finally(() => {
+
+              });
         }
     }
 </script>
